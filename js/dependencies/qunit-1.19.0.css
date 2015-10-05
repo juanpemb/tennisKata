@@ -1,0 +1,204 @@
+
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--   [PAGCODE:THROUGHPROXYVER01]  -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BBVA ::: Wifi</title>
+
+<LINK rel=stylesheet type=text/css href="https://portalwifi2.grupobbva.com/css/wifi_estilos.css">
+<!--[if IE]> <LINK rel=stylesheet type=text/css href="https://portalwifi2.grupobbva.com/css/wifi_estilos_ie.css"><![endif]-->
+
+<script type="text/javascript" src="https://portalwifi2.grupobbva.com/js/jquery.js"></script>
+<script type="text/javascript" src="https://portalwifi2.grupobbva.com/js/wifi_func.js"></script>
+
+</head>
+
+<body onload="loadPage();requeteloadPage();">
+
+
+<script>
+function requeteloadPage() {
+
+	//HIDE PALOALTO DEFAULT LOGIN PROMPT
+	var divObj = document.getElementById("taLogin");
+	divObj.style.display = "none";
+	
+	//HIDE PALOALTO DEFAULT ERROR ELEMENT
+	var divObj = document.getElementById("dError");
+	divObj.style.display = "none";
+	
+	//SHOW ERROR
+	var errObj = document.getElementById("errorDisplay");
+	//errObj.innerHTML=divObj.innerHTML;
+	if(divObj.innerHTML != ''){
+		errObj.innerHTML='Error de autenticación. Si el problema persiste,<br>póngase en contacto con su administrador de red';
+	}
+}
+
+function requeteSend(){
+//	var formToSubmit = document.getElementById("login_form");
+//	var formWithData = document.getElementById("new_login_form");
+//	formToSubmit.user = formWithData.usuario;
+//	formToSubmit.passwd = formWithData.clave;
+//	
+//	submitClicked();
+//
+//	// hide error part
+//	var divObj = document.getElementById("errorDisplay");
+//	divObj.style.display = "none";
+//	divObj.innerHTML = "";
+//
+//	//hide form
+//	var divTaLogin = document.getElementById("new_login_form");
+//	divTaLogin.style.display = "none";
+}
+</script>
+<div id="contenedor">
+	<div id="cabecera">
+    	<h1><a href="#">BBVA Wifi</a></h1>
+    </div><!-- fin #cabecera -->
+    
+    <div id="login" class="clearfix">
+    	<a href="#" class="help" title="Ayuda / Help">Help</a>
+        
+        <div class="info">
+        <div class="top_info">&nbsp;</div>
+        	<a href="#" class="cerrar">cerrar</a>
+            <dl>
+            	<dt>Empleados de BBVA / BBVA employee</dt>
+                <dd>Accede con tu usuario y contraseña e-spacio.</dd>
+                <dd>Use your e-spacio user and password to log-in.</dd>
+				<dd><a href="https://community.grupobbva.com/SLDB/sldb/SLDBEXDesbloqueoInicio.jsp" target="_top">Desbloqueo Usuario / Unlock User</a></dd>
+				<dd><a href="http://mail.bbva.com" target="_top">Contraseña Caducada / Expired Password</a></dd>
+            </dl>
+            
+            <dl>
+            	<dt>Usuarios invitados / Guest users</dt>
+                <dd>Introduce el usuario y contraseña que te hayan proporcionado.</dd>
+                <dd>Use the user and password provided.</dd>
+            </dl>
+        </div><!-- fin .info -->
+        <div class="entrada">
+							<!-- CHANGE BY BORJA : <form> => <form id=""> &&  method="post"-->
+        <form id="new_login_form"  method="post">
+			<fieldset>
+							<div class="elemento">
+								<label for="user">Usuario / User <span>e-spacio</span></label>
+								<input id="user" class="campo_texto" name="user"/>
+							</div>
+							
+							<div class="elemento">
+								<label for="passwd">Contraseña / Password <span>e-spacio</span></label>
+								<input id="passwd" class="campo_texto" type="password"  name="passwd"/>
+							</div>
+							
+							<div class="elemento_boton">
+							<!-- CHANGE BY BORJA : onclick=""-->
+							<input type="submit" value="Entrar" class="boton" onClick="requeteSend()"/>
+							</div>
+							<!-- CHANGE BY BORJA : add this input-->
+					<input type="hidden" value="Login" name="ok"/>
+							<!-- CHANGE BY BORJA : add this input-->
+					<input type="hidden" value="" name="inputStr"/>
+							<!-- CHANGE BY BORJA : add this input-->
+					<input type="hidden" value="" name="escapeUser"/>
+	
+			</fieldset>
+		</form>
+		</div><!-- fin .entrada -->
+	<!-- BORJA NEW ELEMENT (FOR THE ERROR)-->
+	<div style="text-align:center;" id="errorDisplay"></div>
+	</div><!-- fin #login -->
+	<div id="footer">
+    	<p>El uso no autorizado de este sistema está prohibido y auditado por lo que se podrán emprender acciones legales contra usted</p>
+    </div><!-- fin #footer -->
+</div><!-- fin #conenedor -->
+	
+<script>
+
+function loadPage() {
+	document.login.user.value = "";
+
+    if (document.login.user.value == '')
+	    document.login.user.focus();
+
+	var errMsg = "";
+	var respStatus = "Success";
+	var respMsg = "";
+	if (respStatus == "Error") {
+		if (errMsg != "")
+			errMsg += "<br><br>";
+		errMsg += "<li>"+respMsg;
+	} else if (respStatus == "Challenge") {
+		var divUserName = document.getElementById("dUserName");
+		divUserName.style.display = "none";
+		var passwdTitle = document.getElementById("passwdTitle");
+		passwdTitle.innerHTML = "";
+		
+		var divInputStr = document.getElementById("dInputStr");
+		divInputStr.style.display = "block";
+		divInputStr.innerHTML = respMsg;
+	}
+	// respStatus can also be "" when we come to this page the first time
+
+	if (errMsg != "") {
+		var divObj = document.getElementById("dError");
+		
+		divObj.style.display = "block";
+		divObj.innerHTML = errMsg;
+	}
+}
+
+function submitClicked() {
+	var thisForm = document.getElementById("login_form");
+	// hide the error div, just incase it was showing.
+	var divObj = document.getElementById("dError");
+	divObj.style.display = "none";
+	divObj.innerHTML = "";
+
+	var divTaLogin = document.getElementById("taLogin");
+	divTaLogin.style.display = "none";
+
+    thisForm.inputStr.value = "";
+    thisForm.escapeUser.value = thisForm.user.value.replace(/\\/g, "\\\\");
+    
+}
+
+function onClickHandler() {
+	submitClicked();
+}
+
+</script>
+
+	<form name="login" id="login_form" method="post">
+        <input type='hidden' name="inputStr" value="">
+        <input type='hidden' name="escapeUser" value="">        
+    
+        <div id="taLogin">
+             <table>
+                  <tr id="dUserName">
+                      <td>Name</td>
+	                  <td><input type="text" id="user" name="user" size="19"></td>
+	              </tr>
+	              <tr>
+                      <td><span id="passwdTitle">Password</span></td>
+	                  <td>
+                          <div id="dInputStr" style="display:none"><br></div>
+						  <input type="password" maxlength="40" size="19" name="passwd">
+	                  </td>
+	              </tr>
+              	  <tr>
+                  	  <td>&nbsp;</td>
+	                  <td><input class="buttonFixed" type="submit" id="submit"
+                          name="ok" value="Login" onClick="submitClicked()"></td>
+	              </tr>
+             </table>
+         </div>
+	</form>
+    <div id="dError" class="msg" style="display:none"></div>
+
+
+</body>
+</html>
