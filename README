@@ -1,0 +1,36 @@
+Acerca de esta Kata
+Esta Kara implementa el marcador de un sencillo juego de tennis. El objetivo no es acabarla, es aprender el ciclo de vida de desarrollo con  TDD y conocer sus pros y contras, ademas de pasar un buen rato programando
+
+El sistema de puntuado es bastante sencillo aunque para este juego tiene algunas peculiaridades:
+
+
+Consejos a tener en cuenta:
+* Codificar los requisitos de uno en uno, sin avanzar en los siguientes. Solo pensar en lo que pide el punto actual.
+* Empezar escribiendo el test, haciendo que falle
+* Hacer pasar el test lo mas sencillo y de la forma mas corta posible
+* Revisar el codigo, "refactorizando"
+* Continuar por el siguiente requisito
+
+
+1. Cuando el juego comienza el marcador es "All in love"
+
+2. Cuando puntua el primer jugador hace el primer punto el resultado es "fifteen,love". 
+
+3. Cuando puntua el segundo jugador la segunda bola el resultado es "fifteen,fifteen".
+
+4. Cuando el segundo jugador puntua las dos primeras veces el resultado es "love,thirty".
+
+5. Cuando el primer jugador puntua las tres primeras veces el resultado es "forty,love".
+
+6. El primer jugador gana el juego, teniendo al menos cuatro puntos y 2 puntos mas que el segudno jugador.
+
+7. El segudno jugador gana el juego, teniendo al menos cuatro puntos y dos puntos mas que el primer jugador.
+
+8. Si los dos jugadores ganan tres puntos de forma alternativa el resultado es "deuce".
+
+9. Si el primer jugador gana un punto estando es deuce el resultado es "advantage player 1"
+
+10. Si el primer jugador gana un punto estando en advantage el resultado es "winer player 1"
+
+ 
+
