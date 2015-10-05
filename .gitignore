@@ -3,3 +3,4 @@ bin/**
 .git
 .project
 **/*.class
+bin/**/*.class
