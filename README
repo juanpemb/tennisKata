@@ -1,5 +1,5 @@
 Acerca de esta Kata
-Esta Kara implementa el marcador de un sencillo juego de tennis. El objetivo no es acabarla, es aprender el ciclo de vida de desarrollo con  TDD y conocer sus pros y contras, ademas de pasar un buen rato programando
+Esta Kata implementa el marcador de un sencillo juego de tennis. El objetivo no es acabarla, es aprender el ciclo de vida de desarrollo con  TDD y conocer sus pros y contras, ademas de pasar un buen rato programando
 
 El sistema de puntuado es bastante sencillo aunque para este juego tiene algunas peculiaridades:
 
