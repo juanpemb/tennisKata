@@ -75,19 +75,6 @@ public class TennisGameTest {
 		assertEquals("Player2 wins", score);
 	}
 	
-	
-//	
-//	public void testPlayersAreDuce4() {
-//
-//	public void testPlayerTwoAdvantage(){
-//
-//	public void testPlayerOneAdvantage(){
-//	
-//	public void testPlayerTwoWins(){
-//	
-//	public void testPlayerTwoWinsAfterAdvantage() {
-//
-//	public void testPlayerOneWinsAfterAdvantage() {
 	private TennisGame createScore(int playerOne, int playerTwo) {
 		TennisGame game = new TennisGame();
 		for (int i = 0; i < playerOne; i++) {
