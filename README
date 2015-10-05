@@ -16,21 +16,21 @@ Consejos a tener en cuenta:
 
 2. Cuando puntua el primer jugador hace el primer punto el resultado es "fifteen,love". 
 
-3. Cuando puntua el segundo jugador la segunda bola el resultado es "fifteen,fifteen".
+3. A continuacion puntua el segundo jugador la segunda bola el resultado es "fifteen,fifteen".
 
 4. Cuando el segundo jugador puntua las dos primeras veces el resultado es "love,thirty".
 
 5. Cuando el primer jugador puntua las tres primeras veces el resultado es "forty,love".
 
-6. El primer jugador gana el juego, teniendo al menos cuatro puntos y 2 puntos mas que el segudno jugador.
+6. El primer jugador gana el juego, teniendo al menos cuatro puntos y 2 puntos mas que el segundo jugador.
 
-7. El segudno jugador gana el juego, teniendo al menos cuatro puntos y dos puntos mas que el primer jugador.
+7. El segundo jugador gana el juego, teniendo al menos cuatro puntos y dos puntos mas que el primer jugador.
 
 8. Si los dos jugadores ganan tres puntos de forma alternativa el resultado es "deuce".
 
-9. Si el primer jugador gana un punto estando es deuce el resultado es "advantage player 1"
+9. Si el primer jugador gana un punto estando en deuce el resultado es "advantage player 1"
 
-10. Si el primer jugador gana un punto estando en advantage el resultado es "winer player 1"
+10. Si el primer jugador gana un punto estando en advantage el resultado es "winer player 2"
 
  
 
