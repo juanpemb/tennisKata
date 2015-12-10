@@ -60,7 +60,7 @@ public class TennisGameTest {
 	public void testPlayerOneWinsGame(){
 		TennisGame game = createScore(3, 2);
 		
-		game.playerOneScores();
+		game.playerOneScore();
 		
 		assertEquals("Player1 wins",game.getScore());
 	}
@@ -68,7 +68,7 @@ public class TennisGameTest {
 	@Test
 	public void testPlayerTwoWinsGame(){
 		TennisGame game = createScore(0,3);
-		game.playerTwoScores();
+		game.playerTwoScore();
 		
 		String score = game.getScore();
 
@@ -78,10 +78,10 @@ public class TennisGameTest {
 	private TennisGame createScore(int playerOne, int playerTwo) {
 		TennisGame game = new TennisGame();
 		for (int i = 0; i < playerOne; i++) {
-			game.playerOneScores();
+			game.playerOneScore();
 		}
 		for (int i = 0; i < playerTwo; i++) {
-			game.playerTwoScores();
+			game.playerTwoScore();
 		}
 		return game;
 	}
